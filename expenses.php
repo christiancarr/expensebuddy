@@ -129,12 +129,13 @@ $stmt->close();
     <title>Expense Manager</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+	<!-- Using Flatpickr because bootstrap datepicker in the edit modal was blanking out the rest of the modal fields on initiation -->
 	<!-- Flatpickr CSS -->
-<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <!-- Jquery before flatpicker -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<!-- Flatpickr JS -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	
 </head>
 <body>
@@ -165,9 +166,9 @@ $stmt->close();
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="amount">Amount</label>
-                    <input type="text" class="form-control" id="amount" name="amount" required>
-                </div>
+    <label for="amount">Amount</label>
+    <input type="number" class="form-control" id="amount" name="amount" step="0.01" min="0" required>
+</div>
                 <div class="form-group">
                     <label for="description">Description</label>
                     <input type="text" class="form-control" id="description" name="description">
@@ -278,10 +279,10 @@ $stmt->close();
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="editAmount">Amount</label>
-                        <input type="text" class="form-control" id="editAmount" name="amount" required>
-                    </div>
+                   <div class="form-group">
+    <label for="editAmount">Amount</label>
+    <input type="number" class="form-control" id="editAmount" name="amount" step="0.01" min="0" required>
+</div>
                     <div class="form-group">
                         <label for="editDescription">Description</label>
                         <input type="text" class="form-control" id="editDescription" name="description">
@@ -307,6 +308,15 @@ $stmt->close();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 <script>
 $(document).ready(function () {
+    // Restrict input to valid numbers only
+    $('#amount, #editAmount').on('input', function () {
+        // Regex to match valid decimal values like 123.45
+        const validValue = this.value.match(/^\d*\.?\d{0,2}$/);
+        if (!validValue) {
+            this.value = this.value.slice(0, -1); // Remove the last invalid character
+        }
+    });
+
     // Initialize Flatpickr for date fields
     $('#date, #startDate, #endDate, #editDate').flatpickr({
         dateFormat: 'm/d/Y', // Match your database date format
@@ -332,6 +342,7 @@ $(document).ready(function () {
         window.history.replaceState(null, null, window.location.href);
     }
 });
+
 
 </script>
 
