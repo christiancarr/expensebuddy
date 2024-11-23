@@ -1,9 +1,9 @@
 <?php
 // Database connection credentials
 $host = 'localhost';
-$user = 'expeybnv_prime';
-$pass = 'Sheri4316!';
-$dbName = 'expeybnv_db1';
+$user = 'YOUR USERNAME';
+$pass = 'YOUR PASSWORD';
+$dbName = 'YOUR DATABASE NAME';
 
 // Create connection
 $conn = mysqli_connect($host, $user, $pass, $dbName);
