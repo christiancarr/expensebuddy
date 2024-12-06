@@ -93,6 +93,7 @@ while ($row = $result->fetch_assoc()) {
 <body>
     <div class="container mt-5">
         <div class="text-center">
+            <h2><a class="navbar-brand logo" href="#"><img src="images/expenseBuddyLogoLG.png" width="300"></a></h2>
             <h2>Category Manager</h2>
         </div>
         <div class="text-center mt-4">

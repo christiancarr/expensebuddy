@@ -141,6 +141,7 @@ $stmt->close();
 <body>
 <div class="container mt-5">
     <div class="text-center">
+        <h2><a class="navbar-brand logo" href="#"><img src="images/expenseBuddyLogoLG.png" width="300"></a></h2>
         <h2>Expense Manager</h2>
         <a href="categories.php" class="btn btn-light mt-2">Manage Categories</a>
         <a href="report.php" class="btn btn-primary mt-2">View Report</a>

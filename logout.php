@@ -21,8 +21,12 @@ setcookie('uID', '', time() - 3600, "/"); // Set to a past time to delete the co
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+   
     <div class="container text-center mt-5">
-        <h2>Logout Successful</h2>
+      <h2><a class="navbar-brand logo" href="#"><img src="images/expenseBuddyLogoLG.png" width="300"></a></h2>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <h2>Logout Successful</h2>
         <p>You have been logged out.</p>
         <a href="index.php" class="btn btn-success">Return to Home</a>
     </div>

@@ -84,8 +84,10 @@ if (!isset($_GET['token'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+
 <div class="container mt-5">
-    <h2 class="text-center">Reset Your Password</h2>
+  <h2 class="text-center"><a class="navbar-brand logo" href="#"><img src="images/expenseBuddyLogoLG.png" width="300"></a></h2>
+  <h2 class="text-center">Reset Your Password</h2>
     <form method="POST" action="" class="mt-4">
         <div class="mb-3">
             <label for="password" class="form-label">New Password:</label>

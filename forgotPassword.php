@@ -13,8 +13,10 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+
 <div class="container mt-5">
-    <h2 class="text-center">Forgot Password</h2>
+  <h2 class="text-center"><a class="navbar-brand logo" href="#"><img src="images/expenseBuddyLogoLG.png" width="300"></a></h2>
+  <h2 class="text-center">Forgot Password</h2>
     <form id="forgotPasswordForm" method="POST" action="">
         <div class="mb-3">
             <label for="email" class="form-label">Enter your email:</label>
