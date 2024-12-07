@@ -202,7 +202,7 @@ $stmt->close();
                         <button type="submit" class="btn btn-primary">Search</button>
                     </div>
                 </div>
-                <button type="button" class="btn btn-secondary ml-2" id="clearButton">Clear</button>
+                <a href="?searchQuery="><button type="button" class="btn btn-secondary ml-2" id="clearButton">Clear</button></a>
             </form>
         </div>
     </div>
